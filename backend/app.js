@@ -3,6 +3,8 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import helmet from 'helmet';
 import morgan from 'morgan';
+import userRoutes from './routes/users.js';
+import authRoutes from './routes/auth.js';
 dotenv.config();
 const port = 8800;
 const app = express();
@@ -18,7 +20,8 @@ app.use(morgan('common'));
 app.get('/', (req, res) => {
     res.send('Welcome to Loopin');
 }); 
-
+app.use('/api/users', userRoutes);
+app.use('/api/auth', authRoutes);
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
 });
