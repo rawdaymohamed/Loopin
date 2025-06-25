@@ -15,6 +15,7 @@ export const validateUpdateUser = [
     .isEmail().withMessage("Invalid email address"),
 
    body("password")
+   .optional()
     .isLength({ min: 6 })
     .withMessage("Password must be at least 6 characters")
     .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{6,}$/)
