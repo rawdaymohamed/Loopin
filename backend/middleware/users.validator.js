@@ -42,3 +42,19 @@ export const validateUpdateUser = [
     .not().exists()
     .withMessage("Modification of this field is not allowed"),
 ];
+import { param, validationResult } from "express-validator";
+import mongoose from "mongoose";
+
+export const validateUserId = [
+  param("id")
+    .custom((value) => mongoose.Types.ObjectId.isValid(value))
+    .withMessage("Invalid user ID"),
+
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    next();
+  }
+];

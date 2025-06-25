@@ -1,7 +1,7 @@
 import { Router } from "express";
-import { updateUserProfile } from "../controllers/users.controller.js";
+import { deleteUserProfile, updateUserProfile } from "../controllers/users.controller.js";
 import { protect } from "../middleware/auth.js";
-import { validateUpdateUser } from "../middleware/users.validator.js";
+import { validateUpdateUser, validateUserId } from "../middleware/users.validator.js";
 import { validateInputs } from "../middleware/validator.js";
 
 const router = Router();
@@ -11,4 +11,9 @@ router.put("/:id",
   validateInputs,
   updateUserProfile
 );
+router.delete("/:id",
+  protect,
+  validateUserId,
+  validateInputs,
+  deleteUserProfile);
 export default router;
