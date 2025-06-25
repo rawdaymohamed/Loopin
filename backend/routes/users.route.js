@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteUserProfile, getUserProfile, updateUserProfile } from "../controllers/users.controller.js";
+import { deleteUserProfile, followUnfollowUser, getUserProfile, updateUserProfile } from "../controllers/users.controller.js";
 import { protect } from "../middleware/auth.js";
 import { validateUpdateUser, validateUserId } from "../middleware/users.validator.js";
 import { validateInputs } from "../middleware/validator.js";
@@ -22,4 +22,9 @@ router.get("/:id",
   validateInputs,
   getUserProfile
 );
+router.put("/:id/follow",
+  protect,
+  validateUserId,
+  followUnfollowUser);
+
 export default router;
