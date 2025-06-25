@@ -52,6 +52,26 @@ export const deleteUserProfile = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
 // get user profile
+export const getUserProfile = async (req, res) => {
+  const userId = req.params.id;
+
+  try {
+    const user = await User.findById(userId).select("-password"); // exclude password
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    res.status(200).json({
+      message: "User profile fetched successfully",
+      user
+    });
+  } catch (error) {
+    console.error("Get profile error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
 // follow user  
 // unfollow user

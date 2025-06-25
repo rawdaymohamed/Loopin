@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { deleteUserProfile, updateUserProfile } from "../controllers/users.controller.js";
+import { deleteUserProfile, getUserProfile, updateUserProfile } from "../controllers/users.controller.js";
 import { protect } from "../middleware/auth.js";
 import { validateUpdateUser, validateUserId } from "../middleware/users.validator.js";
 import { validateInputs } from "../middleware/validator.js";
@@ -16,4 +16,10 @@ router.delete("/:id",
   validateUserId,
   validateInputs,
   deleteUserProfile);
+router.get("/:id",
+  protect,
+  validateUserId,
+  validateInputs,
+  getUserProfile
+);
 export default router;
