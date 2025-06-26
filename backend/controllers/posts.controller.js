@@ -104,4 +104,21 @@ export const likeUnlikePost = async (req, res) => {
   }
 };
 // get post by id
+export const getPostById = async (req, res) => {
+  const postId = req.params.id;
+
+  try {
+    const post = await Post.findById(postId).populate('userId', 'username profilePicture');
+    if (!post) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    res.status(200).json({
+      message: "Post fetched successfully",
+      post
+    });
+  } catch (error) {
+    console.error("Get post by ID error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
 // get timeline posts
