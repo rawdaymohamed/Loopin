@@ -24,6 +24,32 @@ export const createPost = async (req, res) => {
   }
 };
 // update post
+export const updatePost = async (req, res) => {
+  const postId = req.params.id;
+  const userId = req.user.id;
+
+  try {
+    const post = await Post.findById(postId);
+    if (!post) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    if (post.userId.toString() !== userId && !req.user.isAdmin) {
+      return res.status(403).json({ message: "You can only update your own posts" });
+    }
+    const updatedPost = await Post.findByIdAndUpdate(
+      postId,
+      { $set: req.body },
+      { new: true, runValidators: true }
+    );
+    res.status(200).json({
+      message: "Post updated successfully",
+      post: updatedPost
+    });
+  } catch (error) {
+    console.error("Update post error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
 // delete post
 // like post
 // get post by id
