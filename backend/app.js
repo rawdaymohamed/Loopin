@@ -5,6 +5,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import userRoutes from './routes/users.route.js';
 import authRoutes from './routes/auth.route.js';
+import postRoutes from './routes/posts.route.js';
 dotenv.config();
 const port = 8800;
 const app = express();
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 }); 
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/posts', postRoutes);
 app.listen(port, () => {
     console.log(`Server is running on ${port}`);
 });
