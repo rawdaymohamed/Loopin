@@ -122,3 +122,26 @@ export const getPostById = async (req, res) => {
   }
 };
 // get timeline posts
+export const getTimelinePosts = async (req, res) => {
+  const userId = req.user.id;
+
+  try {
+    const user = await User.findById(userId);
+    if (!user) {
+      return res.status(404).json({ message: "User not found" });
+    }
+
+    const userPosts = await Post.find({ userId }).populate('userId', 'username profilePicture');
+    const friendPosts = await Post.find({ userId: { $in: user.following } }).populate('userId', 'username profilePicture');
+
+    const timelinePosts = [...userPosts, ...friendPosts].sort((a, b) => b.createdAt - a.createdAt);
+
+    res.status(200).json({
+      message: "Timeline posts fetched successfully",
+      posts: timelinePosts
+    });
+  } catch (error) {
+    console.error("Get timeline posts error:", error);
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
