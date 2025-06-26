@@ -75,3 +75,13 @@ export const validateUpdatePost = [
     next();
   }
 ];
+export const validatePostId = [
+  // Validate post ID param
+  param("id")
+    .custom((value) => {
+      if (!mongoose.Types.ObjectId.isValid(value)) {
+        throw new Error("Post ID must be a valid MongoDB ObjectId");
+      }
+      return true;
+    })
+];
