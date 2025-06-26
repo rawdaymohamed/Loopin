@@ -1,12 +1,11 @@
-import {IoHome} from 'react-icons/io5';
+import { IoHome } from "react-icons/io5";
+import Topbar from "../../components/topbar/Topbar";
 const Home = () => {
   return (
     <div>
-      <IoHome />
-      Home page
+      <Topbar />
     </div>
-  )
-}
+  );
+};
 
 export default Home;
-
