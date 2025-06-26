@@ -1,48 +1,43 @@
-import { IoHome } from "react-icons/io5";
-import "./topbar.css";
-import { MdNotifications, MdOutlineChatBubble, MdSearch } from "react-icons/md";
 
-import {FaUser } from "react-icons/fa";
+import "./topbar.css";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { MdOutlineChatBubble } from "react-icons/md";
+import { FaUserFriends } from "react-icons/fa";
+import { FaSearch } from "react-icons/fa";
 
 const Topbar = () => {
   return (
-    <div className="topbarContainer">
-      <div className="topbarLeft">
-        <span className="logo" >Loopin</span>
+    <div className="topbar">
+      <div className="topbar-left">
+        <span className="logo">Loopin</span>
       </div>
-      <div className="topbarCenter">
-        <div className="searchBar">
-          <MdSearch className="searchIcon" />
-          <input
-            type="text"
-            placeholder="Search for friend, post or video"
-            className="searchInput"
-          />
+
+      <div className="topbar-center">
+        <div className="search-bar">
+          <FaSearch className="search-icon" />
+          <input type="text" placeholder="Search..." />
         </div>
       </div>
-      <div className="topbarRight">
-        <div className="topbarLinks">
-          <span className="topbarLink">Homepage</span>
-          <span className="topbarLink">Timeline</span>
-        </div>
-        <div className="topbarIcons">
-          <div className="topbarIconItem">
-            <FaUser className="topbarIcon userIcon" />
-            <span className="topbarIconBadge">1</span>
+
+      <div className="topbar-right">
+        <div className="topbar-icons">
+          <div className="icon">
+            <FaUserFriends />
+            <span className="badge">2</span>
           </div>
-          <div className="topbarIconItem">
-            <MdOutlineChatBubble className="topbarIcon" />
-            <span className="topbarIconBadge">1</span>
+          <div className="icon">
+            <MdOutlineChatBubble />
+            <span className="badge">5</span>
           </div>
-          <div className="topbarIconItem">
-            <MdNotifications className="topbarIcon" />
-            <span className="topbarIconBadge">1</span>
+          <div className="icon">
+            <IoMdNotificationsOutline />
+            <span className="badge">3</span>
           </div>
         </div>
         <img
-          src="https://images.unsplash.com/photo-1608734265656-f035d3e7bcbf?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fGJveXxlbnwwfHwwfHx8MA%3D%3D"
+          src="https://i.pravatar.cc/40"
           alt="Profile"
-          className="topbarImg"
+          className="profile-pic"
         />
       </div>
     </div>

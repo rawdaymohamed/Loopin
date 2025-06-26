@@ -1,106 +1,106 @@
-.topbarContainer {
+
+.topbar {
   width: 100%;
-  height: 50px;
-  background-color: #181d25;
+  height: 60px;
+  background-color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  position: static;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+  position: sticky;
   top: 0;
-}
-.topbarLeft {
-  flex: 2;
-}
-.topbarCenter {
-  flex: 5;
-}
-.topbarRight {
-  flex: 4;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  color: white;
-}
-.topbarIcons {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.topbarImg {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: white;
-  margin-left: 17px;
-  cursor: pointer;
-}
-.searchBar {
-  width: 100%;
-  height: 30px;
-  border-radius: 15px;
-  border: none;
-  padding: 0 10px;
-  background-color: #fff;
-  outline: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
-}
-.searchIcon {
-  font-size: 20px;
-  color: #999;
-  margin-right: 10px;
-}
-.searchInput {
-  width: 100%;
-  border: none;
-  outline: none;
-  background-color: transparent;
-  color: #333;
+  z-index: 1000;
 }
 
-.topbarLinks {
+.topbar-left .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+.topbar-center {
+  flex: 1;
   display: flex;
-  gap: 10px;
+  justify-content: center;
 }
-.topbarLink {
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-}
-.topbarIcons {
+
+.search-bar {
+  width: 70%;
+  max-width: 500px;
+  background-color: #f0f2f5;
   display: flex;
-  gap: 20px;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 20px;
 }
-.topbarIcon {
+
+.search-bar input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  padding: 8px;
+}
+
+.search-icon {
+  color: #999;
+  margin-right: 8px;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.topbar-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon {
   position: relative;
+  font-size: 20px;
   cursor: pointer;
-  color: white;
-  width: 20px;
-  height: 20px;
+  color: #555;
 }
-.topbarIconItem {
-  position: relative;
-  color: white;
-  cursor: pointer;
-}
-.userIcon {
-  width: 18px;
-  height: 18px;
-}
-.topbarIconBadge {
+
+.badge {
   position: absolute;
-  top: -8px;
-  right: -10px;
+  top: -6px;
+  right: -6px;
   background-color: red;
   color: white;
+  font-size: 10px;
+  padding: 2px 6px;
   border-radius: 50%;
-  padding: 2px 5px;
-  font-size: 12px;
 }
+
+.profile-pic {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .search-bar {
+    width: 100%;
+  }
+
+  .topbar-center {
+    display: none; /* Hide search bar on small screens */
+  }
+
+  .topbar-right {
+    gap: 10px;
+  }
+
+  .topbar-icons .icon {
+    font-size: 18px;
+  }
+}
+    
