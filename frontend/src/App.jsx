@@ -1,11 +1,5 @@
-
-
-
 function App() {
-  return (
-    <>
-    </>
-  )
+  return <div>Loopin</div>;
 }
 
-export default App
+export default App;
