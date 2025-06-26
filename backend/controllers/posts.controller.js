@@ -70,6 +70,38 @@ export const deletePost = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
-// like post
+// like/unlike post
+export const likeUnlikePost = async (req, res) => {
+  const postId = req.params.id;
+  const userId = req.user.id;
+
+  try {
+    const post = await Post.findById(postId);
+    if (!post) {
+      return res.status(404).json({ message: "Post not found" });
+    }
+    if (post.likes.includes(userId)) {
+      // Unlike the post
+      post.likes = post.likes.filter(id => id.toString() !== userId);
+      const updatedPost = await post.save();
+      return res.status(200).json({
+        message: "Post unliked successfully",
+        post: updatedPost
+      });
+    } else {
+      // Like the post
+      post.likes.push(userId);
+       const updatedPost = await post.save();
+      return res.status(200).json({
+        message: "Post liked successfully",
+        post: updatedPost
+      });
+    }
+
+  } catch (error) {
+    console.error("Like/Unlike post error:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
+};
 // get post by id
 // get timeline posts
