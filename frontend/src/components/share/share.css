@@ -63,8 +63,8 @@
   transition: color 0.3s ease;
 }
 .option-text {
-  font-size: 12px;
-  font-weight: 400;
+
+display: none;
 }
 .icon {
   width: 20px;
@@ -117,8 +117,5 @@
   .options {
    
     gap: 20px;
-  }
-  .option-text {
-   display: none; /* Hide text on smaller screens */
   }
 }

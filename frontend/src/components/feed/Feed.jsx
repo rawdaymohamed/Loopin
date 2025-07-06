@@ -9,6 +9,12 @@ const Feed = () => {
         {/* Feed content goes here */}
         <Share />
         <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
+        <Post />
       </div>
     </div>
   );
