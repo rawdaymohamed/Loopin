@@ -1,0 +1,124 @@
+.share {
+  border: 1px solid #eee;
+  width: 100%;
+  max-width: 600px;
+  height: 180px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 10px 0;
+}
+.wrapper {
+  padding: 20px;
+  width: 100%;
+  
+}
+.profile-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.top {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+}
+.textarea {
+  width: 100%;
+  max-width: 500px;
+  height: 70px;
+  color: #333;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+  padding: 10px;
+}
+.hr {
+  margin: 17px 0;
+  border: none;
+  height: 1px;
+  background-color: #eee;
+}
+.bottom {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  
+}
+.option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+.option-text {
+  font-size: 12px;
+  font-weight: 400;
+}
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: #555;
+  transition: fill 0.3s ease;
+}
+.option:hover {
+  color: #363636;
+}
+.share-button {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+.share-button:hover {
+  background-color: #0056b3;
+}
+.share-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+.share-button:disabled:hover {
+  background-color: #ccc;
+}
+.share-button:disabled:active {
+  background-color: #ccc;
+}
+.share-button:active {
+  background-color: #0056b3;
+  transform: scale(0.95);
+}
+@media (max-width: 970px) {
+  .share {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+  .wrapper {
+    padding: 10px;
+  }
+  .textarea {
+    height: 50px;
+  }
+  .options {
+   
+    gap: 20px;
+  }
+  .option-text {
+   display: none; /* Hide text on smaller screens */
+  }
+}

@@ -35,7 +35,7 @@ const Topbar = () => {
           </div>
         </div>
         <img
-          src="https://i.pravatar.cc/40"
+          src="https://i.pravatar.cc/100"
           alt="Profile"
           className="profile-pic"
         />
