@@ -1,3 +1,4 @@
+import Post from "../post/Post";
 import Share from "../share/Share";
 import "./feed.css";
 
@@ -6,9 +7,9 @@ const Feed = () => {
     <div className="feed">
       <div className="wrapper">
         {/* Feed content goes here */}
-        <Share/>
+        <Share />
+        <Post />
       </div>
-      
     </div>
   );
 };
