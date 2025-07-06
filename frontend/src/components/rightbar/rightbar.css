@@ -2,3 +2,120 @@
   flex: 4;
   padding: 20px;
 }
+.rightbar .wrapper {
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.birthday-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f8ff;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.birthday-icon {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #ff7b00;
+}
+.birthday-text {
+  font-size: 16px;
+  color: #555;
+}
+.ad-container {
+  border-radius: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ad-image {
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.rightbar-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.friend-list-container {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.rightbar-friend-list {
+  padding: 10px;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: start;
+  gap: 14px;
+}
+
+.friend-container {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: inherit;
+  gap: 7px;
+  width: 60px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.rightbar-friend-profile-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+.friend-profile-image-container {
+  position: relative;
+}
+
+.friend-online-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  background-color: #4caf50; /* online green */
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.friend-profile-image-container:hover .friend-online-indicator {
+  transform: scale(1.2);
+  box-shadow: 0 0 6px rgba(76, 175, 80, 0.6);
+}
+.rightbar-friend-name {
+  font-size: 12px;
+  color: #666;
+  font-weight: 500;
+}
+.rightbar-friend-name:hover {
+  color: #333;
+  text-decoration: underline;
+}
