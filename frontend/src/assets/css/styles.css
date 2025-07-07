@@ -1,10 +1,10 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
-body{
-    font-family: Roboto, sans-serif;
-    font-size: 16px;
-    color: #333;
-    background-color: #f4f4f4;
-}   
+body {
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  color: #333;
+  background-color: #f4f4f4;
+}

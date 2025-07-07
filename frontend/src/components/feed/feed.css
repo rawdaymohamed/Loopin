@@ -1,6 +1,10 @@
 .feed {
   flex: 5;
- 
+  background-color: #f8f9fa;
+  /* position: sticky; */
+  /* top: 0; */
+  /* height: calc(100vh - 50px); */
+  /* overflow-y: scroll; */
 }
 
 .wrapper {
