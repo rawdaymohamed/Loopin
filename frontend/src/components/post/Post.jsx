@@ -2,25 +2,22 @@ import { useState } from "react";
 import "./post.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaRegHeart, FaHeart } from "react-icons/fa";
-
-const Post = () => {
+import { users } from "../../data/users";
+const Post = ({ post }) => {
   const [liked, setLiked] = useState(false);
   const handleLike = () => {
     setLiked(!liked);
   };
+  const user = users.find((user) => user.id === post.userId);
   return (
     <div className="post">
       <div className="wrapper">
         {/* post top */}
         <div className="top">
           <div className="top-left">
-            <img
-              src="https://i.pravatar.cc/100"
-              alt="Profile"
-              className="post-profile-img"
-            />
-            <span className="post-username">John Doe</span>
-            <span className="post-date">5 mins ago</span>
+            <img src={user.profilePicture} alt="Profile" className="post-profile-img" />
+            <span className="post-username">{user.username}</span>
+            <span className="post-date">{post.date}</span>
           </div>
           <div className="top-right">
             <BsThreeDotsVertical className="post-options-icon" />
@@ -29,15 +26,10 @@ const Post = () => {
 
         {/* post center */}
         <div className="center">
-          <span className="post-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </span>
-          <img
-            src="https://picsum.photos/500/300"
-            alt="Post"
-            className="post-image"
-          />
+          {post?.description && (
+            <span className="post-text">{post?.description}</span>
+          )}
+          <img src={post.image} alt="Post" className="post-image" />
         </div>
 
         {/* post bottom */}
@@ -48,10 +40,10 @@ const Post = () => {
             ) : (
               <FaRegHeart className="like-icon" onClick={handleLike} />
             )}
-            <span className="like-count">100 likes</span>
+            <span className="like-count">{post.likes} likes</span>
           </div>
           <div className="bottom-right">
-            <span className="comment-count">20 comments</span>
+            <span className="comment-count">{post.comments} comments</span>
           </div>
         </div>
 
